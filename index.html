@@ -15,13 +15,15 @@
         }
         h1 {
             color: #2F6E8D;
+            font-size: 24px; /* Tamaño de fuente ajustado */
         }
         h2 {
             color: #4F9C6B;
+            font-size: 20px; /* Tamaño de fuente ajustado */
         }
         .carousel {
             position: relative;
-            max-width: 800px; /* Ancho máximo del carrusel */
+            max-width: 100%; /* Cambiado a 100% para que se adapte al contenedor */
             margin: auto;
             overflow: hidden;
             border-radius: 5px; /* Bordes redondeados opcionales */
@@ -33,8 +35,8 @@
             justify-content: center; /* Centra las imágenes dentro del contenedor */
         }
         .carousel-images img, .carousel-images video {
-            width: 800px; /* Ajusta el ancho de todas las imágenes y videos */
-            height: 500px; /* Ajusta la altura de todas las imágenes y videos */
+            width: 100%; /* Cambiado a 100% para que se adapte al contenedor */
+            height: auto; /* Mantiene la relación de aspecto */
             object-fit: contain; /* Cambiado a contain para evitar que se corten */
             display: none; /* Inicialmente ocultamos todas las imágenes y videos */
         }
@@ -71,6 +73,18 @@
         }
         li {
             margin-bottom: 10px; /* Espacio entre elementos de la lista */
+        }
+        /* Media Queries para pantallas más pequeñas */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 20px; /* Tamaño de fuente para móvil */
+            }
+            h2 {
+                font-size: 18px; /* Tamaño de fuente para móvil */
+            }
+            .carousel-button {
+                font-size: 20px; /* Tamaño de flechas para móvil */
+            }
         }
     </style>
 </head>
@@ -131,69 +145,44 @@
             <li>Bandeja de rejilla y base: Plástico ABS</li>
         </ul>
     </li>
-    <li><strong>Condición del Producto:</strong> Nuevo</li>
-    <li><strong>Garantía:</strong> 3 meses</li>
-    <li><strong>Color(es):</strong> Verde (césped), Negro (bandeja)</li>
     <li><strong>Dimensiones:</strong>
         <ul>
-            <li>Alto: 6.4 cm</li>
-            <li>Ancho: 51 cm</li>
-            <li>Largo: 64 cm</li>
+            <li>Medidas: 60 cm x 40 cm x 5 cm</li>
+            <li>Peso: 2 kg</li>
         </ul>
     </li>
-    <li><strong>Peso:</strong> 1 kg</li>
-    <li><strong>Ficha Técnica:</strong>
+    <li><strong>Colores disponibles:</strong>
         <ul>
-            <li>Material Principal: Poliéster, Plástico ABS</li>
-            <li>Tipo: Orinal con bandeja sanitaria</li>
-            <li>Contenido: 1 unidad (césped, rejilla y bandeja)</li>
-            <li>País de Origen: China</li>
-            <li>Tipo de Higiene: Orinal sanitario</li>
-            <li>Tipo de Mascota: Perro</li>
+            <li>Verde</li>
+            <li>Beige</li>
         </ul>
     </li>
 </ul>
 
 <h2>4. Información Adicional</h2>
-<ul>
-    <li><strong>Instrucciones de Uso:</strong>
-        <ul>
-            <li><strong>Montaje:</strong> No requiere ensamblaje.</li>
-            <li><strong>Uso:</strong> Coloca la grama en un lugar accesible para tu mascota. La bandeja recolecta la orina, y el césped sintético ayuda a simular un ambiente natural.</li>
-            <li><strong>Limpieza:</strong> Retira la bandeja inferior para vaciar la orina y límpiala con agua y jabón suave. La alfombra superior se puede enjuagar fácilmente con agua.</li>
-            <li><strong>Mantenimiento:</strong> Limpia regularmente para evitar la acumulación de olores y desechos.</li>
-            <li><strong>Consejos:</strong> Introduce gradualmente el orinal a tu perro, utilizando refuerzos positivos para facilitar el proceso de entrenamiento.</li>
-            <li><strong>Advertencias:</strong> Supervisa a tu mascota durante el uso y mantén el producto alejado de fuentes de fuego.</li>
-        </ul>
-    </li>
-</ul>
-
-<h2>6. Disponibilidad y Tallas</h2>
-<ul>
-    <li><strong>Disponibilidad:</strong> 15 unidades en stock</li>
-    <li><strong>Talla Disponible:</strong> Única (64 cm x 51 cm x 6.4 cm)</li>
-</ul>
-
-<h2>7. Precio</h2>
-<ul>
-    <li><strong>Precio:</strong> $168.450 COP</li>
-</ul>
+<div class="additional-info">
+    <p>Este producto es <strong>fácil de limpiar</strong>. Se recomienda lavarlo con agua y jabón, asegurando que esté completamente seco antes de volver a usarlo. Con el uso regular, se puede tratar con productos desinfectantes seguros para mascotas.</p>
+    <p><strong>Instrucciones de uso:</strong> Coloca la grama en un área designada, enseña a tu perro a usarla y recompénsalo cuando lo haga correctamente.</p>
+    <p>Adquiere la <strong>Grama Sintética Sanitaria Orinal</strong> y brinda a tu mascota un lugar cómodo y limpio para hacer sus necesidades. ¡Haz que el entrenamiento sea más fácil y divertido!</p>
+</div>
 
 <script>
-    let currentSlide = 0; // Inicializa la diapositiva actual
-    const slides = document.querySelectorAll('.carousel-images img, .carousel-images video'); // Selecciona todas las imágenes y videos
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.carousel-images img, .carousel-images video');
 
-    // Función para mover las diapositivas
-    function moveSlide(direction) {
-        slides[currentSlide].classList.remove('active'); // Oculta la diapositiva actual
-        currentSlide = (currentSlide + direction + slides.length) % slides.length; // Calcula la nueva diapositiva
-        slides[currentSlide].classList.add('active'); // Muestra la nueva diapositiva
+    function showSlide(index) {
+        slides[currentSlide].classList.remove('active'); // Oculta el slide actual
+        currentSlide = (index + slides.length) % slides.length; // Calcula el nuevo índice
+        slides[currentSlide].classList.add('active'); // Muestra el nuevo slide
     }
 
-    // Muestra la primera diapositiva al cargar
-    window.onload = function() {
-        slides[currentSlide].classList.add('active');
-    };
+    function moveSlide(direction) {
+        showSlide(currentSlide + direction);
+    }
+
+    // Mostrar el primer slide
+    showSlide(currentSlide);
 </script>
+
 </body>
 </html>
