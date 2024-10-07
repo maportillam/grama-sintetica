@@ -7,38 +7,40 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Inter', sans-serif; /* Fuente moderna */
+            font-family: 'Inter', sans-serif;
             line-height: 1.6;
             margin: 20px;
             padding: 20px;
-            background-color: #f4f4f4; /* Fondo blanco */
+            background-color: #f4f4f4;
+            box-sizing: border-box; /* Incluye padding y borde en el ancho total */
         }
         h1 {
             color: #2F6E8D;
-            font-size: 24px; /* Tamaño de fuente ajustado */
+            font-size: 24px;
         }
         h2 {
             color: #4F9C6B;
-            font-size: 20px; /* Tamaño de fuente ajustado */
+            font-size: 20px;
         }
         .carousel {
             position: relative;
-            max-width: 100%; /* Cambiado a 100% para que se adapte al contenedor */
+            max-width: 100%;
             margin: auto;
             overflow: hidden;
-            border-radius: 5px; /* Bordes redondeados opcionales */
+            border-radius: 5px;
         }
         .carousel-images {
             display: flex;
-            transition: transform 0.5s ease; /* Animación suave al deslizar */
-            width: 100%; /* Ajusta el ancho al 100% del contenedor */
-            justify-content: center; /* Centra las imágenes dentro del contenedor */
+            transition: transform 0.5s ease;
+            width: 100%;
+            justify-content: center;
         }
         .carousel-images img, .carousel-images video {
-            width: 100%; /* Cambiado a 100% para que se adapte al contenedor */
+            max-width: 100%; /* Limita el ancho al 100% del contenedor */
             height: auto; /* Mantiene la relación de aspecto */
-            object-fit: contain; /* Cambiado a contain para evitar que se corten */
+            object-fit: contain; /* Ajusta la imagen/video sin recortar */
             display: none; /* Inicialmente ocultamos todas las imágenes y videos */
+            aspect-ratio: 16 / 9; /* Establece una relación de aspecto deseada */
         }
         .carousel-images img.active, .carousel-images video.active {
             display: block; /* Solo muestra la imagen o video activo */
@@ -51,15 +53,15 @@
             border: none;
             padding: 10px;
             cursor: pointer;
-            font-size: 24px; /* Tamaño de la flecha */
+            font-size: 24px;
             border-radius: 5px;
-            z-index: 1; /* Asegura que los botones estén en frente */
+            z-index: 1;
         }
         .carousel-button.left {
-            left: 10px; /* Ajusta la posición de la flecha izquierda */
+            left: 10px;
         }
         .carousel-button.right {
-            right: 10px; /* Ajusta la posición de la flecha derecha */
+            right: 10px;
         }
         .specifications, .additional-info {
             background-color: #fff;
@@ -68,22 +70,25 @@
             margin-bottom: 20px;
         }
         ul {
-            list-style-type: disc; /* Cambia el tipo de lista */
-            padding-left: 20px; /* Espacio a la izquierda para las listas */
+            list-style-type: disc;
+            padding-left: 20px;
         }
         li {
-            margin-bottom: 10px; /* Espacio entre elementos de la lista */
+            margin-bottom: 10px;
         }
         /* Media Queries para pantallas más pequeñas */
         @media (max-width: 600px) {
             h1 {
-                font-size: 20px; /* Tamaño de fuente para móvil */
+                font-size: 20px; 
             }
             h2 {
-                font-size: 18px; /* Tamaño de fuente para móvil */
+                font-size: 18px; 
             }
             .carousel-button {
-                font-size: 20px; /* Tamaño de flechas para móvil */
+                font-size: 20px; 
+            }
+            .carousel-images img, .carousel-images video {
+                aspect-ratio: 4 / 3; /* Cambia la relación de aspecto para móviles */
             }
         }
     </style>
@@ -109,7 +114,7 @@
         <img src="11.webp" alt="Grama Sintética Sanitaria para Perros - Vista 12">
         <img src="12.webp" alt="Grama Sintética Sanitaria para Perros - Vista 13">
         <video controls>
-            <source src="Video.mp4" type="video/mp4"> <!-- Cambia 'Video.mp4' por la ruta de tu video -->
+            <source src="Video.mp4" type="video/mp4"> 
             Tu navegador no soporta la etiqueta de video.
         </video>
     </div>
@@ -186,3 +191,4 @@
 
 </body>
 </html>
+
