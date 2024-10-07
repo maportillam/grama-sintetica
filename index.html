@@ -36,11 +36,10 @@
             justify-content: center;
         }
         .carousel-images img, .carousel-images video {
-            max-width: 100%; /* Limita el ancho al 100% del contenedor */
+            width: 100%; /* Escalar al ancho del contenedor */
             height: auto; /* Mantiene la relación de aspecto */
-            object-fit: contain; /* Ajusta la imagen/video sin recortar */
+            object-fit: cover; /* Ajusta la imagen/video sin recortar */
             display: none; /* Inicialmente ocultamos todas las imágenes y videos */
-            aspect-ratio: 16 / 9; /* Establece una relación de aspecto deseada */
         }
         .carousel-images img.active, .carousel-images video.active {
             display: block; /* Solo muestra la imagen o video activo */
@@ -86,9 +85,6 @@
             }
             .carousel-button {
                 font-size: 20px; 
-            }
-            .carousel-images img, .carousel-images video {
-                aspect-ratio: 4 / 3; /* Cambia la relación de aspecto para móviles */
             }
         }
     </style>
@@ -191,4 +187,3 @@
 
 </body>
 </html>
-
